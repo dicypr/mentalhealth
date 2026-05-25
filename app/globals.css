@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --serene-primary: #1D9E75;
+    --serene-dark: #085041;
+    --serene-light: #E1F5EE;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-feature-settings: 'rlig' 1, 'calt' 1;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #c5c5c5; border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: #a0a0a0; }
+}
+
+@layer components {
+  .serene-btn {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-200 cursor-pointer;
+  }
+  .serene-btn-primary {
+    @apply serene-btn bg-serene-500 hover:bg-serene-600 text-white shadow-sm;
+  }
+  .serene-btn-ghost {
+    @apply serene-btn bg-transparent hover:bg-serene-50 text-serene-700 border border-serene-200;
+  }
+  .serene-card {
+    @apply bg-white rounded-2xl border border-stone-100 shadow-sm p-6;
+  }
+  .chat-bubble-bot {
+    @apply bg-white border border-stone-100 rounded-2xl rounded-tl-sm px-4 py-3 text-sm leading-relaxed font-serif text-stone-800 shadow-sm;
+  }
+  .chat-bubble-user {
+    @apply bg-serene-700 text-serene-50 rounded-2xl rounded-tr-sm px-4 py-3 text-sm leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.3s ease forwards;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+}
