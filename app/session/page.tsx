@@ -84,7 +84,7 @@ export default function SessionPage() {
       // Auto-focus crisis resources if emergency
       if (data.scoreData?.recommendation === 'emergency') {
         toast.error('Please reach out for immediate support. Call iCall: 9152987821', {
-          duration: 10000, important: true
+          duration: 10000
         })
       }
 
