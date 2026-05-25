@@ -1,14 +1,8 @@
 {
   "version": 2,
   "name": "serene-mental-health",
-  "buildCommand": "npm run build",
-  "outputDirectory": ".next",
   "framework": "nextjs",
   "regions": ["bom1"],
-  "env": {
-    "GROQ_API_KEY": "@groq-api-key",
-    "SESSION_SECRET": "@session-secret"
-  },
   "headers": [
     {
       "source": "/api/(.*)",
